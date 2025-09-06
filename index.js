@@ -26,14 +26,22 @@ app.get('/api/hello', function (req, res) {
 
 app.get("/api/whoami", (req, res) => {
 
-const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+let ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || req.connection?.remoteAddress || req.ip || '';
 
-  const ipaddress = ip.split(",")[0];
-  const language = req.headers["accept-language"];
-  const software = req.headers["user-agent"];
+  // if multiple IPs (comma list), take the first one
+  ip = ip.split(',')[0].trim();
+
+  // strip IPv4-mapped IPv6 prefix if present (::ffff:127.0.0.1 -> 127.0.0.1)
+  if (ip.startsWith('::ffff:')) ip = ip.replace('::ffff:', '');
+
+  // normalize IPv6 loopback to IPv4 loopback (optional)
+  if (ip === '::1') ip = '127.0.0.1';
+
+  const language = req.headers['accept-language'] || '';
+  const software = req.headers['user-agent'] || '';
 
   res.json({
-    ipadress: ipaddress,
+    ipadress: ip,
     language: language,
     software: software
   });
