@@ -1,12 +1,19 @@
 {
+<<<<<<< HEAD
   "name": "request-header-parser-microservice",
   "version": "0.0.2",
   "description": "API project for freeCodeCamp",
+=======
+  "name": "fcc-api-projects-boilerplate",
+  "version": "0.0.1",
+  "description": "An FCC Backend Challenge",
+>>>>>>> d028f088892f79a9ee15c346b39143d9b0a39f95
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
+<<<<<<< HEAD
     "cors": "^2.8.1",
     "dotenv": "^8.2.0",
     "express": "^4.18.1"
@@ -14,16 +21,33 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/boilerplate-project-headerparser.git"
+=======
+    "express": "^4.12.4",
+    "cors": "^2.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freeCodeCamp/boilerplate-project-timestamp.git"
+>>>>>>> d028f088892f79a9ee15c346b39143d9b0a39f95
   },
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/freeCodeCamp/boilerplate-project-headerparser#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "keywords": [
     "freeCodeCamp",
     "node",
     "express"
+=======
+  "homepage": "https://github.com/freeCodeCamp/boilerplate-project-timestamp#readme",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "keywords": [
+    "node",
+    "express",
+    "freeCodeCamp"
+>>>>>>> d028f088892f79a9ee15c346b39143d9b0a39f95
   ],
   "license": "MIT"
 }
